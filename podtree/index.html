@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podtree</title>
+    <style>
+        canvas {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    Here is the podtree:<br />
+    <canvas id="canvasPodtree" width="200" height="100"></canvas>
+    <br />
+    <canvas id="canvasLegend" width="50" height="100"></canvas>
+    <br>
+    <canvas id="vl" width="400" height="400"></canvas>
+
+    <script>
+        // branches
+        function drawBranch(context, moveToX, moveToY, lineToX, lineToY) {
+            context.beginPath();
+            context.moveTo(moveToX, moveToY);
+            context.lineTo(lineToX, lineToY);
+            context.lineWidth = 5;
+            // set line color black
+            context.strokeStyle = '#000000';
+            context.stroke();
+        } 
+        //circle 
+        function drawBubble(context, xPos, yPos, text, strokeStyle) {
+            ctx.beginPath();
+            ctx.lineWidth = 7;
+            ctx.arc(95, 30, 40, 0, 2 * Math.PI);
+            ctx.stroke();
+            text.font = "10px Arial bold";
+            text.fillText("Hello World", 65, 25);
+        }
+
+
+
+        var c = document.getElementById("vl");
+        var ctx = c.getContext("2d");
+        let midpointXaxis = c.width / 2;
+        console.log("midpointXaxis=" + midpointXaxis);
+        //ctx.drawBubble()
+        
+        // let canvas = document.getElementById("vl");
+        // let text = canvas.getContext("2d");
+
+
+        
+
+
+
+
+        let canvas = document.getElementById('vl');
+        let context = canvas.getContext("2d");
+        context.beginPath();
+        context.moveTo(200, 10);
+        context.lineTo(200, 400);
+
+
+        // draw trunk
+        drawBranch(context, 200, 200, 80, 100);
+        // context.beginPath();
+        // context.moveTo(200, 200);
+        // context.lineTo(80, 100);
+        // context.stroke();
+        // next trunk
+
+    </script>
+
+    </script>
+
+</body>
+
+</html>
